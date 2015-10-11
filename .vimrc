@@ -95,4 +95,4 @@ let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 let g:move_key_modifier = 'C'
 
-"	vim-move
+"	/vim-move
