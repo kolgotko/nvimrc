@@ -1,6 +1,6 @@
+syntax on
 set number
 set nowrap
-syntax on
 set cursorline
 let g:rehash256 = 1
 colorscheme onedark
@@ -25,6 +25,8 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'shawncplus/phpcomplete.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'myhere/vim-nodejs-complete'
+Plug 'matze/vim-move'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
@@ -88,3 +90,9 @@ let g:NERDTreeIndicatorMapCustom = {
 let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
 
 "	/php
+
+"	vim-move
+
+let g:move_key_modifier = 'C'
+
+"	vim-move
