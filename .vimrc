@@ -27,6 +27,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'myhere/vim-nodejs-complete'
 Plug 'matze/vim-move'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'solarnz/whitespace.vim'
 
 call plug#end()
 
@@ -63,12 +66,6 @@ autocmd vimenter * NERDTreeToggle
 
 "	/nerdtree
 
-"	tagbar
-
-autocmd vimenter * TagbarToggle
-
-"	/tagbar
-
 "	nerdtree-git-plugin
 
 let g:NERDTreeIndicatorMapCustom = {
@@ -84,12 +81,6 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 
 "	nerdtree-git-plugin
-
-"	php
-
-let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
-
-"	/php
 
 "	vim-move
 
