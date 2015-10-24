@@ -29,7 +29,7 @@ Plug 'matze/vim-move'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'solarnz/whitespace.vim'
+Plug 'Raimondi/delimitMate'
 
 call plug#end()
 
