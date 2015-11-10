@@ -1,4 +1,5 @@
 syntax on
+set noswapfile
 set number
 set nowrap
 set cursorline
