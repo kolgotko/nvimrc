@@ -14,6 +14,7 @@ set shiftwidth=4
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'mattn/emmet-vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
