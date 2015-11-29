@@ -5,8 +5,6 @@ set nowrap
 set cursorline
 let g:rehash256 = 1
 colorscheme onedark
-set listchars=tab:\|\ 
-set list
 set tabstop=4
 set shiftwidth=4
 
@@ -14,6 +12,7 @@ set shiftwidth=4
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'mattn/emmet-vim'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
@@ -36,6 +35,13 @@ Plug 'Raimondi/delimitMate'
 call plug#end()
 
 "	/plug
+
+"	vim-indent-guides
+
+let g:indent_guides_enable_on_vim_startup = 1
+
+"	/vim-indent-guides
+
 
 "	airline
 
