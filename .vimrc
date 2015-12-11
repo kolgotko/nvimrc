@@ -7,6 +7,9 @@ let g:rehash256 = 1
 colorscheme onedark
 set tabstop=4
 set shiftwidth=4
+set keymap=russian-jcukenwin
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
 
 "	plug
 
