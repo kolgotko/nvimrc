@@ -8,6 +8,7 @@ colorscheme onedark
 set tabstop=4
 set shiftwidth=4
 set listchars=tab:▸\ ,eol:¬
+set fillchars+=vert:\ 
 set list
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
