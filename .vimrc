@@ -75,7 +75,8 @@ let NERDTreeWinSize = 20
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-autocmd vimenter * NERDTreeToggle
+let g:nerdtree_tabs_open_on_console_startup=1
+"autocmd vimenter * NERDTreeToggle
 
 "	/nerdtree
 
