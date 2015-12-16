@@ -51,8 +51,9 @@ call plug#end()
 "	airline
 
 set laststatus=2
-let g:airline_left_sep=''
-let g:airline_right_sep=''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#tabline#enabled = 1
 
 "	/airline
 
@@ -76,7 +77,7 @@ let NERDTreeWinSize = 25
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_open_on_console_startup = 1
 "autocmd vimenter * NERDTreeToggle
 
 "	/nerdtree
