@@ -14,7 +14,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNO
 
 "	GUI font
 command -nargs=? Guifont call rpcnotify(0, 'Gui', 'SetFont', "<args>") | let g:Guifont="<args>"
-Guifont Liberation Sans Mono:h10
+Guifont Liberation Mono:h10
 "	/GUI font
 
 "	plug
