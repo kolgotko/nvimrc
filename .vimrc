@@ -40,6 +40,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
+Plug 'wting/rust.vim'
 
 call plug#end()
 
