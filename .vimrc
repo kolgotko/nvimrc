@@ -41,6 +41,7 @@ Plug 'tpope/vim-commentary'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
 Plug 'wting/rust.vim'
+Plug 'peterhoeg/vim-qml'
 
 call plug#end()
 
