@@ -12,11 +12,6 @@ set fillchars+=vert:\
 set list
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-"	GUI font
-command -nargs=? Guifont call rpcnotify(0, 'Gui', 'SetFont', "<args>") | let g:Guifont="<args>"
-Guifont Liberation Mono:h10
-"	/GUI font
-
 "	plug
 
 call plug#begin('~/.vim/plugged')
@@ -42,6 +37,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
 Plug 'wting/rust.vim'
 Plug 'peterhoeg/vim-qml'
+Plug 'equalsraf/neovim-gui-shim'
 
 call plug#end()
 
