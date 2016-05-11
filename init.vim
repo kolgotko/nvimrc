@@ -16,6 +16,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNO
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'joshdick/airline-onedark.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'mattn/emmet-vim'
 Plug 'bling/vim-airline'
@@ -53,6 +54,7 @@ call plug#end()
 
 "	airline
 
+let g:airline_theme='onedark'
 set laststatus=2
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
