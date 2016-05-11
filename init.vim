@@ -38,6 +38,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'wting/rust.vim'
 Plug 'peterhoeg/vim-qml'
 Plug 'equalsraf/neovim-gui-shim'
+Plug 'Ioannis-Kapoulas/vim-autoprefixer'
 
 call plug#end()
 
