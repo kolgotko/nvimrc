@@ -16,9 +16,9 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNO
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'mattn/emmet-vim'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
@@ -44,19 +44,14 @@ call plug#end()
 
 "	/plug
 
-"	vim-indent-guides
-
-"let g:indent_guides_enable_on_vim_startup = 1
-
-"	/vim-indent-guides
-
-
 "	airline
 
 set laststatus=2
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_theme='bubblegum'
 
 "	/airline
 
@@ -81,7 +76,6 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:nerdtree_tabs_open_on_console_startup = 1
-"autocmd vimenter * NERDTreeToggle
 
 "	/nerdtree
 
@@ -99,7 +93,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-"	nerdtree-git-plugin
+"	/nerdtree-git-plugin
 
 "	vim-move
 
