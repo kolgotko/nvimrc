@@ -6,5 +6,6 @@ my init.vim for neovim
 * Colorscheme original [onedark] (https://github.com/joshdick/onedark.vim)
 * [autoprefixer] (https://github.com/postcss/autoprefixer#cli)
 * [powerline fonts] (https://github.com/powerline/fonts)
+
 # Install:
 
