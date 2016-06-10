@@ -1,4 +1,5 @@
 syntax on
+set updatetime=250
 set noswapfile
 set number
 set nowrap
