@@ -1,4 +1,9 @@
 syntax on
+set keymap=russian-jcukenwin
+set iminsert=0
+set autoindent
+set smartindent
+set autoread
 set updatetime=250
 set noswapfile
 set number
