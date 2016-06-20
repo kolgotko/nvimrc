@@ -1,6 +1,7 @@
 syntax on
 set keymap=russian-jcukenwin
 set iminsert=0
+set imsearch=0
 set autoindent
 set smartindent
 set autoread
