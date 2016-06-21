@@ -2,8 +2,6 @@ syntax on
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
-set autoindent
-set smartindent
 set autoread
 set updatetime=250
 set noswapfile
@@ -48,6 +46,7 @@ Plug 'wting/rust.vim'
 Plug 'peterhoeg/vim-qml'
 Plug 'equalsraf/neovim-gui-shim'
 Plug 'Ioannis-Kapoulas/vim-autoprefixer'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
