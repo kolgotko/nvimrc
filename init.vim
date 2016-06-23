@@ -12,6 +12,7 @@ let g:rehash256 = 1
 colorscheme onedark
 set tabstop=4
 set shiftwidth=4
+set colorcolumn=80
 set listchars=tab:▸\ ,eol:¬
 set fillchars+=vert:\ 
 set list
