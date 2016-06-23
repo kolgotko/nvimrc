@@ -48,6 +48,7 @@ Plug 'peterhoeg/vim-qml'
 Plug 'equalsraf/neovim-gui-shim'
 Plug 'Ioannis-Kapoulas/vim-autoprefixer'
 Plug 'sheerun/vim-polyglot'
+Plug 'eugen0329/vim-esearch'
 
 call plug#end()
 
