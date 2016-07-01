@@ -49,6 +49,7 @@ Plug 'equalsraf/neovim-gui-shim'
 Plug 'Ioannis-Kapoulas/vim-autoprefixer'
 Plug 'sheerun/vim-polyglot'
 Plug 'eugen0329/vim-esearch'
+Plug 'ap/vim-css-color'
 
 call plug#end()
 
