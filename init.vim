@@ -50,6 +50,7 @@ Plug 'Ioannis-Kapoulas/vim-autoprefixer'
 Plug 'sheerun/vim-polyglot'
 Plug 'eugen0329/vim-esearch'
 Plug 'ap/vim-css-color'
+Plug 'PDV--phpDocumentor-for-Vim'
 
 call plug#end()
 
@@ -109,3 +110,11 @@ let g:NERDTreeIndicatorMapCustom = {
 let g:move_key_modifier = 'C'
 
 "	/vim-move
+
+"	PDV--phpDocumentor-for-Vim
+
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
+
+"	/PDV--phpDocumentor-for-Vim
