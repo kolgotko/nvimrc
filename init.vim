@@ -51,6 +51,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'eugen0329/vim-esearch'
 Plug 'ap/vim-css-color'
 Plug 'PDV--phpDocumentor-for-Vim'
+Plug 'neomake/neomake'
 
 call plug#end()
 
