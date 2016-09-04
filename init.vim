@@ -29,7 +29,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 Plug 'airblade/vim-gitgutter'
 Plug 'majutsushi/tagbar'
-Plug 'scrooloose/syntastic'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -66,19 +65,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='bubblegum'
 
 "	/airline
-
-"	syntastic
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"	/syntastic
 
 "	nerdtree
 
@@ -119,3 +105,10 @@ nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR>
 
 "	/PDV--phpDocumentor-for-Vim
+
+
+"	neomake
+
+autocmd! BufWritePost * Neomake
+
+"	/neomake
