@@ -51,6 +51,7 @@ Plug 'eugen0329/vim-esearch'
 Plug 'ap/vim-css-color'
 Plug 'PDV--phpDocumentor-for-Vim'
 Plug 'neomake/neomake'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
 
@@ -112,3 +113,9 @@ vnoremap <C-P> :call PhpDocRange()<CR>
 autocmd! BufWritePost * Neomake
 
 "	/neomake
+
+"	deoplete
+
+let g:deoplete#enable_at_startup = 1
+
+"	/deoplete
