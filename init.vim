@@ -52,6 +52,7 @@ Plug 'ap/vim-css-color'
 Plug 'PDV--phpDocumentor-for-Vim'
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
