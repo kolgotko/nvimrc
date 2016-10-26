@@ -1,4 +1,4 @@
-# vimrc
+# nvimrc
 my init.vim for neovim
 
 # Requirements:
