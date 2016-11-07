@@ -53,6 +53,7 @@ Plug 'PDV--phpDocumentor-for-Vim'
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'easymotion/vim-easymotion'
+Plug 'gregsexton/matchtag'
 
 call plug#end()
 
