@@ -18,7 +18,7 @@ set fillchars+=vert:\
 set list
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-"	plug
+" plug
 
 call plug#begin('~/.vim/plugged')
 
@@ -57,9 +57,9 @@ Plug 'gregsexton/matchtag'
 
 call plug#end()
 
-"	/plug
+" /plug
 
-"	airline
+" airline
 
 set laststatus=2
 let g:airline_left_sep = ''
@@ -67,9 +67,9 @@ let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='bubblegum'
 
-"	/airline
+" /airline
 
-"	nerdtree
+" nerdtree
 
 let NERDTreeWinSize = 25
 let g:NERDTreeDirArrows = 1
@@ -77,9 +77,9 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:nerdtree_tabs_open_on_console_startup = 1
 
-"	/nerdtree
+" /nerdtree
 
-"	nerdtree-git-plugin
+" nerdtree-git-plugin
 
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
@@ -93,31 +93,38 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-"	/nerdtree-git-plugin
+" /nerdtree-git-plugin
 
-"	vim-move
+" vim-move
 
 let g:move_key_modifier = 'C'
 
-"	/vim-move
+" /vim-move
 
-"	PDV--phpDocumentor-for-Vim
+" PDV--phpDocumentor-for-Vim
 
 inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR>
 
-"	/PDV--phpDocumentor-for-Vim
+" /PDV--phpDocumentor-for-Vim
 
 
-"	neomake
+" neomake
 
 autocmd! BufWritePost * Neomake
 
-"	/neomake
+" /neomake
 
-"	deoplete
+" deoplete
 
 let g:deoplete#enable_at_startup = 1
 
-"	/deoplete
+" /deoplete
+
+" settings for tpl files
+
+au BufReadPost *.tpl set ft=html
+au BufReadPost *.tpl set syntax=php
+
+" /settings for tpl files
