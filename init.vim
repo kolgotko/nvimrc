@@ -1,4 +1,5 @@
 syntax on
+set foldmethod=indent
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
