@@ -19,9 +19,6 @@ set fillchars+=vert:\
 set list
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
-
 " plug
 
 call plug#begin('~/.vim/plugged')
