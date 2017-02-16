@@ -55,6 +55,8 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-signify'
+Plug 'neovim/node-host', { 'do': 'npm install' }
+Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
 
 call plug#end()
 
