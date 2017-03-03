@@ -1,4 +1,6 @@
 syntax on
+let g:rehash256 = 1
+colorscheme onedark
 set foldmethod=indent
 set keymap=russian-jcukenwin
 set iminsert=0
@@ -9,15 +11,17 @@ set noswapfile
 set number
 set nowrap
 set cursorline
-let g:rehash256 = 1
-colorscheme onedark
-set tabstop=4
-set shiftwidth=4
 set colorcolumn=80
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,trail:·
 set fillchars+=vert:\ 
 set list
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set smartindent
 
 " plug
 
@@ -57,6 +61,7 @@ Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-signify'
 Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -148,3 +153,13 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " /ultisnips
+
+" indentLine
+
+let g:indentLine_char = '▸'
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = "#525965"
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+
+" /indentLine
