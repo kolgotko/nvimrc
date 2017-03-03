@@ -143,6 +143,7 @@ let g:deoplete#enable_at_startup = 1
 
 au BufReadPost *.tpl set ft=html
 au BufReadPost *.tpl set syntax=php
+au BufRead * retab
 
 " /settings for tpl files
 
@@ -156,7 +157,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " indentLine
 
-let g:indentLine_char = '▸'
+let g:indentLine_char = '·'
 let g:indentLine_color_term = 239
 let g:indentLine_color_gui = "#525965"
 let g:indentLine_color_tty_light = 7 " (default: 4)
