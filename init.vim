@@ -62,6 +62,7 @@ Plug 'mhinz/vim-signify'
 Plug 'neovim/node-host', { 'do': 'npm install' }
 Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
 Plug 'Yggdroot/indentLine'
+Plug 'KabbAmine/gulp-vim'
 
 call plug#end()
 
