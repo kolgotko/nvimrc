@@ -156,10 +156,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " /ultisnips
 
-" vim-signify
-let g:signify_realtime = 1
-" /vim-signify
-
 " indentLine
 
 let g:indentLine_char = '·'
