@@ -7,6 +7,7 @@ python3 py35-setuptools35 libexo liberation-fonts-ttf
 sudo npm install --global postcss-cli autoprefixer
 sudo easy_install-3.5 pip
 sudo pip install neovim
+sudo pip install neovim-remote
 
 # install plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
