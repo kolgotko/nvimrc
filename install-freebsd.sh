@@ -30,5 +30,7 @@ cd onedark.vim/colors
 ln -sf `pwd`/onedark.vim ~/.config/nvim/colors/onedark.vim
 cd ~
 
-nvim -c PlugInstall
-nvim -c UpdateRemotePlugins
+nvim -c PlugInstall -c PlugUpdate -c q -c q
+nvim -c UpdateRemotePlugins -c q -c q
+
+echo done!
