@@ -2,7 +2,7 @@
 
 # requirements
 sudo pkg install -y curl git npm node xclip neovim \
-python3 py35-setuptools35 libexo liberation-fonts-ttf
+python3 py35-setuptools libexo liberation-fonts-ttf
 
 sudo npm install --global postcss-cli autoprefixer
 sudo easy_install-3.5 pip
