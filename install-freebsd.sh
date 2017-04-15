@@ -4,7 +4,7 @@
 sudo pkg install -y curl git npm node xclip neovim \
 python3 py35-setuptools libexo liberation-fonts-ttf
 
-sudo npm install --global postcss-cli autoprefixer sass-lint
+sudo npm install --global postcss-cli autoprefixer
 sudo easy_install-3.5 pip
 sudo pip install neovim
 sudo pip install neovim-remote
