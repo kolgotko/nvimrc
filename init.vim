@@ -92,7 +92,6 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_open_on_gui_startup = 1
-let g:nerdtree_tabs_autofind = 1
 " bugfix
 let g:nerdtree_tabs_synchronize_view = 0
 
