@@ -1,8 +1,8 @@
 #!/bin/sh 
 
 # requirements
-sudo pkg install -y curl git npm node xclip neovim \
-python3 py35-setuptools libexo liberation-fonts-ttf
+sudo pkg install -y curl git npm node xclip neovim coreutils \
+python3 py35-setuptools libexo liberation-fonts-ttf ctags
 
 sudo npm install --global postcss-cli autoprefixer
 sudo easy_install-3.5 pip
@@ -25,9 +25,22 @@ ln -sf `pwd`/ginit.vim ~/.config/nvim/ginit.vim
 # install colorscheme
 pwd=`pwd`
 cd ..
-git clone https://github.com/joshdick/onedark.vim
-cd onedark.vim/colors
-ln -sf `pwd`/onedark.vim ~/.config/nvim/colors/onedark.vim
+
+if [ -d onedark.vim ]
+then
+
+    cd onedark.vim
+    git pull
+    cd ..
+
+else
+
+    git clone https://github.com/joshdick/onedark.vim
+    cd onedark.vim/colors
+    ln -sf `pwd`/onedark.vim ~/.config/nvim/colors/onedark.vim
+
+fi
+
 cd ~
 
 nvim -c PlugInstall -c PlugUpdate -c q -c q
