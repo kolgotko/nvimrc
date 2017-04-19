@@ -2,12 +2,13 @@
 
 # requirements
 sudo pkg install -y curl git npm node xclip neovim coreutils \
-python3 py35-setuptools libexo liberation-fonts-ttf ctags
+python3 py35-setuptools libexo liberation-fonts-ttf ctags ruby23-gems
 
 sudo npm install --global postcss-cli autoprefixer
 sudo easy_install-3.5 pip
 sudo pip install neovim
 sudo pip install neovim-remote
+sudo gem install neovim
 
 # install plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
