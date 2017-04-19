@@ -41,7 +41,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'matze/vim-move'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sensible'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
 Plug 'wting/rust.vim'
@@ -131,6 +130,7 @@ vnoremap <C-P> :call PhpDocRange()<CR>
 " neomake
 
 autocmd! BufWritePost * Neomake
+let g:neomake_html_enabled_makers = []
 
 " /neomake
 
