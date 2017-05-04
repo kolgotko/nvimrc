@@ -1,4 +1,5 @@
 syntax on
+set hidden
 let g:rehash256 = 1
 colorscheme onedark
 set foldmethod=indent
@@ -48,8 +49,8 @@ Plug 'equalsraf/neovim-gui-shim'
 Plug 'Ioannis-Kapoulas/vim-autoprefixer'
 Plug 'sheerun/vim-polyglot'
 Plug 'eugen0329/vim-esearch'
-Plug 'ap/vim-css-color'
-Plug 'PDV--phpDocumentor-for-Vim'
+" Plug 'ap/vim-css-color'
+" Plug 'PDV--phpDocumentor-for-Vim'
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'easymotion/vim-easymotion'
@@ -63,6 +64,10 @@ Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
 Plug 'Yggdroot/indentLine'
 Plug 'KabbAmine/gulp-vim'
 Plug 'godlygeek/tabular'
+
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/echodoc.vim'
+Plug 'Shougo/denite.nvim'
 
 call plug#end()
 
@@ -165,3 +170,13 @@ let g:indentLine_color_tty_light = 7 " (default: 4)
 let g:indentLine_color_dark = 1 " (default: 2)
 
 " /indentLine
+
+" LSP
+
+let g:LanguageClient_autoStart = 1
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> GD :call LanguageClient_textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
+
+" /LSP
+
