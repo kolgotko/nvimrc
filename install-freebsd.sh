@@ -24,25 +24,6 @@ mkdir -p ~/.config/nvim/colors
 ln -sf `pwd`/init.vim ~/.config/nvim/init.vim
 ln -sf `pwd`/ginit.vim ~/.config/nvim/ginit.vim
 
-# install colorscheme
-pwd=`pwd`
-cd ..
-
-if [ -d onedark.vim ]
-then
-
-    cd onedark.vim
-    git pull
-    cd ..
-
-else
-
-    git clone https://github.com/joshdick/onedark.vim
-    cd onedark.vim/colors
-    ln -sf `pwd`/onedark.vim ~/.config/nvim/colors/onedark.vim
-
-fi
-
 cd ~
 
 nvim -c PlugInstall -c PlugUpdate -c q -c q

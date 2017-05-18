@@ -1,7 +1,6 @@
 syntax on
 set hidden
 let g:rehash256 = 1
-colorscheme onedark
 set foldmethod=indent
 set keymap=russian-jcukenwin
 set iminsert=0
@@ -64,6 +63,7 @@ Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
 Plug 'Yggdroot/indentLine'
 Plug 'KabbAmine/gulp-vim'
 Plug 'godlygeek/tabular'
+Plug 'joshdick/onedark.vim'
 
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
@@ -72,6 +72,8 @@ Plug 'Shougo/denite.nvim'
 call plug#end()
 
 " /plug
+
+colorscheme onedark
 
 " airline
 
