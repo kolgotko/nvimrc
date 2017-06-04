@@ -69,6 +69,8 @@ Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/denite.nvim'
 
+Plug 'jsfaint/gen_tags.vim'
+
 call plug#end()
 
 " /plug
