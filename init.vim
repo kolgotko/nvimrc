@@ -185,3 +185,10 @@ nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
 
 " /LSP
 
+" gen_tags
+
+let g:gen_tags#ctags_bin = 'exctags'
+let g:gen_tags#ctags_auto_gen = 1
+let g:gen_tags#gtags_auto_gen = 1
+
+" /gen_tags
