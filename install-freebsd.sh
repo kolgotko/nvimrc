@@ -26,7 +26,7 @@ ln -sf `pwd`/ginit.vim ~/.config/nvim/ginit.vim
 
 cd ~
 
-nvim -c PlugInstall -c PlugUpdate -c q -c q
+nvim -c PlugUpgrade -c PlugInstall -c PlugUpdate -c q -c q
 nvim -c UpdateRemotePlugins -c q -c q
 
 echo done!
