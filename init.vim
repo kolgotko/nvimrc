@@ -169,6 +169,11 @@ let g:indentLine_color_dark = 1 " (default: 2)
 " LSP
 
 let g:LanguageClient_autoStart = 1
+
+let g:LanguageClient_serverCommands = {
+\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+\ }
+
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> GD :call LanguageClient_textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
