@@ -131,6 +131,7 @@ let g:move_key_modifier = 'C'
 
 autocmd! BufWritePost * Neomake
 let g:neomake_html_enabled_makers = []
+let g:neomake_rust_enabled_makers = []
 
 " /neomake
 
