@@ -69,6 +69,9 @@ Plug 'Shougo/denite.nvim'
 
 Plug 'jsfaint/gen_tags.vim'
 
+Plug 'Rican7/php-doc-modded'
+
+
 call plug#end()
 
 " /plug
@@ -188,3 +191,11 @@ let g:gen_tags#ctags_auto_gen = 0
 let g:gen_tags#gtags_auto_gen = 0
 
 " /gen_tags
+
+" /php-doc-modded
+
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
+nnoremap <C-P> :call PhpDocSingle()<CR> 
+vnoremap <C-P> :call PhpDocRange()<CR> 
+
+" /php-doc-modded
