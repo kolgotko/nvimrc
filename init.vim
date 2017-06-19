@@ -16,6 +16,7 @@ set listchars=tab:▸\ ,eol:¬,trail:·
 set fillchars+=vert:\ 
 set list
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+set exrc
 
 set tabstop=4
 set shiftwidth=4
