@@ -9,6 +9,7 @@ set autoread
 set updatetime=250
 set noswapfile
 set number
+set relativenumber
 set nowrap
 set cursorline
 set colorcolumn=80
