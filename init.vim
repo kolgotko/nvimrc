@@ -72,6 +72,7 @@ Plug 'Shougo/denite.nvim'
 Plug 'jsfaint/gen_tags.vim'
 
 Plug 'Rican7/php-doc-modded'
+Plug 'janko-m/vim-test'
 
 
 call plug#end()
@@ -201,3 +202,14 @@ nnoremap <C-P> :call PhpDocSingle()<CR>
 vnoremap <C-P> :call PhpDocRange()<CR> 
 
 " /php-doc-modded
+
+
+" vim-test
+
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
+
+" /vim-test
