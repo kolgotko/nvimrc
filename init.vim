@@ -58,22 +58,16 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-signify'
-Plug 'neovim/node-host', { 'do': 'npm install' }
-Plug 'vimlab/mdown.vim', { 'do': 'npm install' }
 Plug 'Yggdroot/indentLine'
 Plug 'KabbAmine/gulp-vim'
 Plug 'godlygeek/tabular'
 Plug 'joshdick/onedark.vim'
-
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/denite.nvim'
-
 Plug 'jsfaint/gen_tags.vim'
-
 Plug 'Rican7/php-doc-modded'
 Plug 'janko-m/vim-test'
-
 
 call plug#end()
 
