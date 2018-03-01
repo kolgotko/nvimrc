@@ -3,7 +3,7 @@
 # requirements
 sudo pkg install -y curl git npm node xclip neovim coreutils \
 python3 py35-setuptools libexo liberation-fonts-ttf global \
-ctags ruby23-gems the_silver_searcher
+ctags ruby24-gems the_silver_searcher
 
 sudo yarn global add postcss-cli autoprefixer
 sudo easy_install-3.5 pip
