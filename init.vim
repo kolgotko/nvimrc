@@ -67,22 +67,35 @@ Plug 'Shougo/denite.nvim'
 Plug 'jsfaint/gen_tags.vim'
 Plug 'Rican7/php-doc-modded'
 Plug 'janko-m/vim-test'
+" Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
 " /plug
 
+let g:onedark_termcolors=256
 colorscheme onedark
 
 " airline
 
 set laststatus=2
+set noshowmode
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='bubblegum'
 
 " /airline
+
+" lightline
+
+set laststatus=2
+set noshowmode
+let g:lightline = {
+    \ 'colorscheme': 'onedark',
+    \ }
+
+" /lightline
 
 " nerdtree
 
