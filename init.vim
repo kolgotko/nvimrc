@@ -68,6 +68,7 @@ Plug 'Shougo/denite.nvim'
 Plug 'jsfaint/gen_tags.vim'
 Plug 'Rican7/php-doc-modded'
 Plug 'janko-m/vim-test'
+Plug 'tpope/vim-repeat'
 
 call plug#end()
 

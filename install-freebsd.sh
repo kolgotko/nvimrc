@@ -1,15 +1,17 @@
 #!/bin/sh 
 
 # requirements
-sudo pkg install -y curl git npm node xclip neovim coreutils \
-python3 py35-setuptools libexo liberation-fonts-ttf global \
-ctags ruby23-gems the_silver_searcher
+sudo pkg install -y curl git npm yarn node xclip neovim coreutils gsed \
+python3 python py36-setuptools py27-setuptools libexo liberation-fonts-ttf global \
+ctags ruby24-gems the_silver_searcher
 
-sudo npm install --global postcss-cli autoprefixer
-sudo easy_install-3.5 pip
-sudo pip install neovim
-sudo pip install neovim-remote
-sudo gem install neovim
+sudo easy_install-3.6 pip
+sudo easy_install-2.7 pip
+sudo pip install pip --upgrade
+sudo pip3.6 install pip --upgrade
+sudo pip3.6 install neovim --upgrade
+sudo gem install neovim --upgrade
+sudo yarn global add neovim
 
 # install plug
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
