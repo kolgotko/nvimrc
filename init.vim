@@ -51,7 +51,7 @@ Plug 'Ioannis-Kapoulas/vim-autoprefixer'
 Plug 'sheerun/vim-polyglot'
 Plug 'eugen0329/vim-esearch'
 Plug 'neomake/neomake'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'tag': '4.0-serial', 'do': ':UpdateRemotePlugins' }
 Plug 'easymotion/vim-easymotion'
 Plug 'gregsexton/matchtag'
 Plug 'dyng/ctrlsf.vim'
@@ -62,7 +62,6 @@ Plug 'Yggdroot/indentLine'
 Plug 'KabbAmine/gulp-vim'
 Plug 'godlygeek/tabular'
 Plug 'joshdick/onedark.vim'
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'jsfaint/gen_tags.vim'
@@ -70,21 +69,38 @@ Plug 'Rican7/php-doc-modded'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-repeat'
 
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
 call plug#end()
 
 " /plug
 
+let g:onedark_termcolors=256
 colorscheme onedark
 
 " airline
 
 set laststatus=2
+set noshowmode
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='bubblegum'
 
 " /airline
+
+" lightline
+
+set laststatus=2
+set noshowmode
+let g:lightline = {
+    \ 'colorscheme': 'onedark',
+    \ }
+
+" /lightline
 
 " nerdtree
 
@@ -100,8 +116,6 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_open_on_gui_startup = 1
 let g:nerdtree_tabs_focus_on_files = 1
-" bugfix
-" let g:nerdtree_tabs_synchronize_view = 0
 
 " /nerdtree-tabs
 
@@ -174,20 +188,6 @@ let g:indentLine_color_dark = 1 " (default: 2)
 
 " /indentLine
 
-" LSP
-
-let g:LanguageClient_autoStart = 1
-
-let g:LanguageClient_serverCommands = {
-\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-\ }
-
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
-nnoremap <silent> GD :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <F2> :call LanguageClient_textDocument_rename()<CR>
-
-" /LSP
-
 " gen_tags
 
 let g:gen_tags#ctags_bin = 'exctags'
@@ -214,3 +214,10 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
 " /vim-test
+
+" netrw
+
+let g:netrw_winsize = 13
+let g:netrw_banner = 0
+
+" /netrw
