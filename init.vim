@@ -47,10 +47,8 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
 Plug 'wting/rust.vim'
 Plug 'equalsraf/neovim-gui-shim'
-Plug 'Ioannis-Kapoulas/vim-autoprefixer'
 Plug 'sheerun/vim-polyglot'
 Plug 'eugen0329/vim-esearch'
-Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim', { 'tag': '4.0-serial', 'do': ':UpdateRemotePlugins' }
 Plug 'easymotion/vim-easymotion'
 Plug 'gregsexton/matchtag'
@@ -71,7 +69,7 @@ Plug 'tpope/vim-repeat'
 
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
+    \ 'do': 'zsh install.sh',
     \ }
 
 call plug#end()
@@ -140,15 +138,6 @@ let g:NERDTreeIndicatorMapCustom = {
 let g:move_key_modifier = 'C'
 
 " /vim-move
-
-
-" neomake
-
-autocmd! BufWritePost * Neomake
-let g:neomake_html_enabled_makers = []
-let g:neomake_rust_enabled_makers = []
-
-" /neomake
 
 " deoplete
 
