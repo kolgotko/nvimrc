@@ -61,6 +61,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'KabbAmine/gulp-vim'
 Plug 'godlygeek/tabular'
 Plug 'joshdick/onedark.vim'
+Plug 'dracula/vim', {'as': 'dracula'}
 Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/denite.nvim'
 Plug 'jsfaint/gen_tags.vim'
@@ -78,7 +79,8 @@ call plug#end()
 " /plug
 
 let g:onedark_termcolors=256
-colorscheme onedark
+" colorscheme onedark
+colorscheme dracula
 
 " airline
 
