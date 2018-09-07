@@ -86,6 +86,9 @@ set completeopt=noinsert,menuone,noselect
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-cssomni'
+Plug 'ncm2/ncm2-html-subscope'
+Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 
 call plug#end()
 
@@ -239,3 +242,8 @@ let g:netrw_winsize = 13
 let g:netrw_banner = 0
 
 " /netrw
+
+" emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,tpl,css,scss,vue EmmetInstall
+" /emmet
