@@ -171,6 +171,18 @@ endfunction
 
 " /deoplete
 
+" ncm2
+
+function! Multiple_cursors_before()
+    call ncm2#lock('vim-multiple-cursors')
+endfunction
+
+function! Multiple_cursors_after()
+    call ncm2#unlock('vim-multiple-cursors')
+endfunction
+
+" /ncm2
+
 " settings for tpl files
 
 au BufReadPost *.tpl set ft=html
