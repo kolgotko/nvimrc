@@ -68,6 +68,7 @@ Plug 'jsfaint/gen_tags.vim'
 Plug 'Rican7/php-doc-modded'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-repeat'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
@@ -98,8 +99,7 @@ call plug#end()
 " /plug
 
 let g:onedark_termcolors=256
-" colorscheme onedark
-colorscheme dracula
+colorscheme onedark
 
 " airline
 
