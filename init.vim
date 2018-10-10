@@ -92,7 +92,6 @@ Plug 'ncm2/ncm2-html-subscope'
 Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 Plug 'filipekiss/ncm2-look.vim'
 let g:ncm2_look_enabled = 1
-Plug 'ncm2/ncm2-racer'
 
 call plug#end()
 
