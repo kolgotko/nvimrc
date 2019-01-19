@@ -26,6 +26,10 @@ set expandtab
 set smartindent
 set mouse=a
 
+" ale required before ALE init
+let g:ale_completion_enabled = 1
+" /ale 
+
 " plug
 
 call plug#begin('~/.vim/plugged')
@@ -49,7 +53,6 @@ Plug 'wting/rust.vim'
 Plug 'equalsraf/neovim-gui-shim'
 Plug 'sheerun/vim-polyglot'
 Plug 'eugen0329/vim-esearch'
-" Plug 'Shougo/deoplete.nvim', { 'tag': '4.0-serial', 'do': ':UpdateRemotePlugins' }
 Plug 'easymotion/vim-easymotion'
 Plug 'gregsexton/matchtag'
 Plug 'dyng/ctrlsf.vim'
@@ -68,12 +71,13 @@ Plug 'Rican7/php-doc-modded'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-repeat'
 Plug 'editorconfig/editorconfig-vim'
-
+Plug 'sakhnik/nvim-gdb', { 'do': './install.sh' }
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
-    \ 'do': 'zsh install.sh',
+    \ 'do': 'bash install.sh',
     \ }
 
+Plug 'w0rp/ale'
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
 
@@ -160,26 +164,16 @@ let g:move_key_modifier = 'C'
 
 " /vim-move
 
-" deoplete
-
-let g:deoplete#enable_at_startup = 1
-function Multiple_cursors_before()
-    let g:deoplete#disable_auto_complete = 1
-endfunction
-function Multiple_cursors_after()
-    let g:deoplete#disable_auto_complete = 0
-endfunction
-
-" /deoplete
-
 " ncm2
 
 function! Multiple_cursors_before()
     call ncm2#lock('vim-multiple-cursors')
+    DelimitMateOff
 endfunction
 
 function! Multiple_cursors_after()
     call ncm2#unlock('vim-multiple-cursors')
+    DelimitMateOn
 endfunction
 
 " /ncm2
@@ -187,8 +181,8 @@ endfunction
 " settings for tpl files
 
 au BufReadPost *.tpl set ft=html
-au BufReadPost *.tpl set syntax=php
-au BufRead * retab
+au BufReadPost *.tpl set syntax=html
+" au BufRead * retab
 
 " /settings for tpl files
 
@@ -212,7 +206,7 @@ let g:indentLine_color_dark = 1 " (default: 2)
 
 " gen_tags
 
-let g:gen_tags#ctags_bin = 'exctags'
+let g:gen_tags#ctags_bin = 'ctags'
 let g:gen_tags#ctags_auto_gen = 0
 let g:gen_tags#gtags_auto_gen = 0
 
@@ -237,6 +231,15 @@ nmap <silent> <leader>g :TestVisit<CR>
 
 " /vim-test
 
+
+" ale
+
+let g:airline#extensions#ale#enabled = 1
+set completeopt=menu,menuone,preview,noselect,noinsert
+imap <C-Space> <Plug>(ale_complete)
+
+" /ale
+
 " netrw
 
 let g:netrw_winsize = 13
@@ -244,7 +247,23 @@ let g:netrw_banner = 0
 
 " /netrw
 
+" signify
+
+let g:signify_sign_add               = '┃'
+let g:signify_sign_delete            = '┃'
+let g:signify_sign_delete_first_line = '┃'
+let g:signify_sign_change            = '┃'
+
+" /signify
+
 " emmet
 let g:user_emmet_install_global = 0
 autocmd FileType html,tpl,css,scss,vue EmmetInstall
 " /emmet
+
+" user overloads
+if filereadable(expand("~/.nvimrc"))
+
+    source ~/.nvimrc
+
+endif
