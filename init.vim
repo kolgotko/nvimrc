@@ -77,6 +77,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 
+Plug 'ryanoasis/vim-devicons'
 Plug 'w0rp/ale'
 Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
@@ -145,14 +146,15 @@ let g:nerdtree_tabs_focus_on_files = 1
 " nerdtree-git-plugin
 
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
+    \ "Modified"  : "M",
+    \ "Staged"    : "S",
+    \ "Untracked" : "U",
     \ "Renamed"   : "➜",
     \ "Unmerged"  : "═",
     \ "Deleted"   : "✖",
     \ "Dirty"     : "✗",
     \ "Clean"     : "✔︎",
+    \ 'Ignored'   : 'I',
     \ "Unknown"   : "?"
     \ }
 
