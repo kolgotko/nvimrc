@@ -71,7 +71,6 @@ Plug 'Rican7/php-doc-modded'
 Plug 'janko-m/vim-test'
 Plug 'tpope/vim-repeat'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'sakhnik/nvim-gdb', { 'do': './install.sh' }
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
