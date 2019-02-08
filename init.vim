@@ -12,7 +12,7 @@ set number
 set relativenumber
 set nowrap
 set cursorline
-set colorcolumn=80
+set colorcolumn=80,120
 set listchars=tab:▸\ ,eol:¬,trail:·
 set fillchars+=vert:\ 
 set list
@@ -240,6 +240,11 @@ nmap <silent> <leader>g :TestVisit<CR>
 let g:airline#extensions#ale#enabled = 1
 set completeopt=menu,menuone,preview,noselect,noinsert
 imap <C-Space> <Plug>(ale_complete)
+
+let g:ale_fixers = {
+\   'javascript': ['eslint', 'tslint'],
+\   'typescript': ['eslint', 'tslint'],
+\}
 
 " /ale
 
