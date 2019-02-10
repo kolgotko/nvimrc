@@ -269,6 +269,15 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,tpl,css,scss,vue EmmetInstall
 " /emmet
 
+" personal mappings
+
+nmap <silent> <leader>fg :NERDTreeTabsFind<CR>:wincmd p<CR>
+nmap <silent> <leader>fr :ALEFindReferences<CR>
+nmap <silent> <leader>gd :ALEGoToDefinitionInSplit<CR>
+nmap <silent> <leader>fx :ALEFix<CR>
+
+" personal mappings
+
 " user overloads
 if filereadable(expand("~/.nvimrc"))
 
