@@ -275,6 +275,8 @@ nmap <silent> <leader>fg :NERDTreeTabsFind<CR>:wincmd p<CR>
 nmap <silent> <leader>fr :ALEFindReferences<CR>
 nmap <silent> <leader>gd :ALEGoToDefinitionInSplit<CR>
 nmap <silent> <leader>fx :ALEFix<CR>
+nmap <silent> <leader>an :ALENext<CR>
+nmap <silent> <leader>jd :JsDoc<CR>
 
 " personal mappings
 
