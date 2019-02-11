@@ -277,6 +277,7 @@ nmap <silent> <leader>gd :ALEGoToDefinitionInSplit<CR>
 nmap <silent> <leader>fx :ALEFix<CR>
 nmap <silent> <leader>an :ALENext<CR>
 nmap <silent> <leader>jd :JsDoc<CR>
+nmap <silent> <leader>re :%bd!<CR>:NERDTree<CR>
 
 " personal mappings
 
