@@ -77,6 +77,8 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 
+Plug 'wellle/targets.vim'
+
 Plug 'ryanoasis/vim-devicons'
 Plug 'w0rp/ale'
 Plug 'ncm2/ncm2'
@@ -140,7 +142,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let g:nerdtree_tabs_open_on_console_startup = 1
 let g:nerdtree_tabs_open_on_gui_startup = 1
 let g:nerdtree_tabs_focus_on_files = 1
-let g:nerdtree_tabs_autofind  = 1
+" let g:nerdtree_tabs_autofind  = 1
 
 " /nerdtree-tabs
 
@@ -278,6 +280,8 @@ nmap <silent> <leader>fx :ALEFix<CR>
 nmap <silent> <leader>an :ALENext<CR>
 nmap <silent> <leader>jd :JsDoc<CR>
 nmap <silent> <leader>re :%bd!<CR>:NERDTree<CR>
+nmap <silent> <leader>nh :noh<CR>
+vnoremap // y/<C-R>"<CR>
 
 " personal mappings
 
