@@ -52,6 +52,7 @@ Plug 'tpope/vim-commentary'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
 Plug 'wting/rust.vim'
+Plug 'rust-lang/rust.vim'
 Plug 'equalsraf/neovim-gui-shim'
 Plug 'sheerun/vim-polyglot'
 Plug 'eugen0329/vim-esearch'
@@ -249,6 +250,9 @@ let g:ale_fixers = {
 \   'javascript': ['eslint', 'tslint'],
 \   'typescript': ['eslint', 'tslint'],
 \}
+
+let g:ale_linters = {'rust': ['rls']}
+let g:ale_rust_rls_toolchain = "nightly"
 
 " /ale
 
