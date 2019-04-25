@@ -25,6 +25,8 @@ set smarttab
 set expandtab
 set smartindent
 set mouse=a
+set spell
+set spelllang=en_us,ru_ru
 
 " ale required before ALE init
 let g:ale_completion_enabled = 1
