@@ -27,10 +27,15 @@ set smartindent
 set mouse=a
 set spell
 set spelllang=en_us,ru_ru
+set signcolumn=yes
+set lazyredraw
+set smartcase
+set ignorecase
+set undofile
+set inccommand=nosplit
 
-" ale required before ALE init
-let g:ale_completion_enabled = 1
-" /ale 
+command! Vimrc :vs $MYVIMRC
+command! ReVimrc :so $MYVIMRC
 
 " plug
 
@@ -79,28 +84,11 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
-
+Plug 'RRethy/vim-illuminate'
 Plug 'wellle/targets.vim'
-
 Plug 'ryanoasis/vim-devicons'
-Plug 'w0rp/ale'
-Plug 'ncm2/ncm2'
 Plug 'roxma/nvim-yarp'
-
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" IMPORTANTE: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-
-Plug 'ncm2/ncm2-bufword'
-Plug 'ncm2/ncm2-tmux'
-Plug 'ncm2/ncm2-path'
-Plug 'ncm2/ncm2-cssomni'
-Plug 'ncm2/ncm2-html-subscope'
-Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-Plug 'filipekiss/ncm2-look.vim'
-let g:ncm2_look_enabled = 1
+Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 
 call plug#end()
 
@@ -178,20 +166,6 @@ let g:move_key_modifier = 'C'
 
 " /vim-move
 
-" ncm2
-
-function! Multiple_cursors_before()
-    call ncm2#lock('vim-multiple-cursors')
-    DelimitMateOff
-endfunction
-
-function! Multiple_cursors_after()
-    call ncm2#unlock('vim-multiple-cursors')
-    DelimitMateOn
-endfunction
-
-" /ncm2
-
 " settings for tpl files
 
 au BufReadPost *.tpl set ft=html
@@ -245,23 +219,6 @@ nmap <silent> <leader>g :TestVisit<CR>
 
 " /vim-test
 
-
-" ale
-
-let g:airline#extensions#ale#enabled = 1
-set completeopt=menu,menuone,preview,noselect,noinsert
-imap <C-Space> <Plug>(ale_complete)
-
-let g:ale_fixers = {
-\   'javascript': ['eslint', 'tslint'],
-\   'typescript': ['eslint', 'tslint'],
-\}
-
-let g:ale_linters = {'rust': ['rls']}
-let g:ale_rust_rls_toolchain = "nightly"
-
-" /ale
-
 " netrw
 
 let g:netrw_winsize = 13
@@ -286,16 +243,31 @@ autocmd FileType html,tpl,css,scss,vue EmmetInstall
 " personal mappings
 
 nmap <silent> <leader>fg :NERDTreeTabsFind<CR>:wincmd p<CR>
-nmap <silent> <leader>fr :ALEFindReferences<CR>
-nmap <silent> <leader>gd :ALEGoToDefinitionInSplit<CR>
-nmap <silent> <leader>fx :ALEFix<CR>
-nmap <silent> <leader>an :ALENext<CR>
 nmap <silent> <leader>jd :JsDoc<CR>
 nmap <silent> <leader>re :%bd!<CR>:NERDTree<CR>
 nmap <silent> <leader>nh :noh<CR>
 vnoremap // y/<C-R>"<CR>
 
-" personal mappings
+inoremap <silent><expr> <c-space> coc#refresh()
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+
+nmap <silent> <leader>gd <Plug>(coc-definition)
+nmap <silent> <leader>gy <Plug>(coc-type-definition)
+nmap <silent> <leader>gi <Plug>(coc-implementation)
+nmap <silent> <leader>gr <Plug>(coc-references)
+
+nmap <leader>ac <Plug>(coc-codeaction)
+nmap <leader>rn <Plug>(coc-rename)
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" /personal mappings
+
+" illuminate
+
+let g:Illuminate_ftblacklist = ['nerdtree']
+
+" /illuminate
 
 " user overloads
 if filereadable(expand("~/.nvimrc"))
