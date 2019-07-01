@@ -2,6 +2,7 @@ syntax on
 set hidden
 let g:rehash256 = 1
 set foldmethod=indent
+set nofoldenable
 set keymap=russian-jcukenwin
 set iminsert=0
 set imsearch=0
@@ -80,10 +81,6 @@ Plug 'janko-m/vim-test'
 Plug 'tpope/vim-repeat'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 Plug 'RRethy/vim-illuminate'
 Plug 'wellle/targets.vim'
 Plug 'ryanoasis/vim-devicons'
