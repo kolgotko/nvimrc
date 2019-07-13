@@ -15,7 +15,7 @@ set nowrap
 set cursorline
 set colorcolumn=80,120
 set listchars=tab:▸\ ,eol:¬,trail:·
-set fillchars+=vert:\ 
+" set fillchars+=vert:\ 
 set list
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 set exrc
@@ -91,7 +91,10 @@ call plug#end()
 
 " /plug
 
+set background=dark
 let g:onedark_termcolors=256
+let g:onedark_hide_endofbuffer=1
+let g:onedark_terminal_italics=1
 colorscheme onedark
 
 " airline
