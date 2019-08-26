@@ -242,6 +242,10 @@ autocmd FileType html,tpl,css,scss,vue EmmetInstall
 
 " personal mappings
 
+" move tabs
+map <C-Up> :tabm -1<CR>
+map <C-Down> :tabm +1<CR>
+
 nmap <silent> <leader>fg :NERDTreeTabsFind<CR>:wincmd p<CR>
 nmap <silent> <leader>jd :JsDoc<CR>
 nmap <silent> <leader>re :%bd!<CR>:NERDTree<CR>
@@ -268,6 +272,14 @@ nmap <leader>f  <Plug>(coc-format-selected)
 let g:Illuminate_ftblacklist = ['nerdtree']
 
 " /illuminate
+
+
+" nerdcommenter
+
+let g:NERDCustomDelimiters = { 'typescript': { 'left': '/** ', 'right': ' */' } }
+
+" /nerdcommenter
+
 
 " user overloads
 if filereadable(expand("~/.nvimrc"))
