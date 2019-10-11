@@ -15,7 +15,7 @@ set nowrap
 set cursorline
 set colorcolumn=80,120
 set listchars=tab:▸\ ,eol:¬,trail:·
-" set fillchars+=vert:\ 
+set fillchars+=vert:\ 
 set list
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 set exrc
@@ -26,7 +26,6 @@ set smarttab
 set expandtab
 set smartindent
 set mouse=a
-set spell
 set spelllang=en_us,ru_ru
 set signcolumn=yes
 set lazyredraw
@@ -34,6 +33,8 @@ set smartcase
 set ignorecase
 set undofile
 set inccommand=nosplit
+set pumblend=15
+hi PmenuSel blend=0
 
 command! Vimrc :vs $MYVIMRC
 command! ReVimrc :so $MYVIMRC
@@ -48,9 +49,9 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/nerdcommenter'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'matze/vim-move'
 Plug 'tpope/vim-surround'
@@ -86,16 +87,26 @@ Plug 'wellle/targets.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'roxma/nvim-yarp'
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+Plug 'kaicataldo/material.vim'
 
 call plug#end()
 
 " /plug
 
+if (has('termguicolors'))
+  set termguicolors
+endif
 set background=dark
 let g:onedark_termcolors=256
 let g:onedark_hide_endofbuffer=1
 let g:onedark_terminal_italics=1
+
+let g:material_theme_style = 'palenight'
+let g:material_terminal_italics = 1
+
 colorscheme onedark
+" colorscheme material
+" colorscheme dracula
 
 " airline
 
@@ -170,7 +181,7 @@ let g:move_key_modifier = 'C'
 
 au BufReadPost *.tpl set ft=html
 au BufReadPost *.tpl set syntax=html
-" au BufRead * retab
+au BufEnter *.* setlocal spell
 
 " /settings for tpl files
 
@@ -262,8 +273,11 @@ nmap <silent> <leader>gr <Plug>(coc-references)
 
 nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>rf <Plug>(coc-refactor)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+nmap ge :NERDTreeTabsToggle<CR>
 
 " /personal mappings
 
@@ -273,6 +287,21 @@ let g:Illuminate_ftblacklist = ['nerdtree']
 
 " /illuminate
 
+" coc
+
+" au BufRead * CocCommand explorer
+" au TabClosed * CocCommand explorer
+nmap <silent> <C-c> <Plug>(coc-cursors-position)
+
+nmap <expr> <silent> <C-d> <SID>select_current_word()
+function! s:select_current_word()
+  if !get(g:, 'coc_cursors_activated', 0)
+    return "\<Plug>(coc-cursors-word)"
+  endif
+  return "*\<Plug>(coc-cursors-word):nohlsearch\<CR>"
+endfunc
+
+" /coc
 
 " nerdcommenter
 

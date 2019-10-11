@@ -1,0 +1,5 @@
+{
+    "coc.preferences.jumpCommand": "split",
+    "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "explorer.icon.enableNerdfont": true
+}
