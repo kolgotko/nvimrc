@@ -38,6 +38,7 @@ hi PmenuSel blend=0
 
 command! Vimrc :vs $MYVIMRC
 command! ReVimrc :so $MYVIMRC
+command! Bd :up | %bd! | e#
 
 " plug
 
@@ -56,8 +57,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'matze/vim-move'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'MattesGroeger/vim-bookmarks'
-Plug 'Raimondi/delimitMate'
 Plug 'wting/rust.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'equalsraf/neovim-gui-shim'
@@ -70,22 +69,16 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-signify'
 Plug 'Yggdroot/indentLine'
-Plug 'KabbAmine/gulp-vim'
 Plug 'godlygeek/tabular'
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', {'as': 'dracula'}
-Plug 'Shougo/echodoc.vim'
 Plug 'Shougo/denite.nvim'
-Plug 'jsfaint/gen_tags.vim'
-Plug 'Rican7/php-doc-modded'
-Plug 'janko-m/vim-test'
 Plug 'tpope/vim-repeat'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'RRethy/vim-illuminate'
 Plug 'wellle/targets.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'roxma/nvim-yarp'
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plug 'kaicataldo/material.vim'
 
@@ -292,6 +285,7 @@ let g:Illuminate_ftblacklist = ['nerdtree']
 " au BufRead * CocCommand explorer
 " au TabClosed * CocCommand explorer
 nmap <silent> <C-c> <Plug>(coc-cursors-position)
+nmap <leader>gn <Plug>(coc-diagnostic-next)
 
 nmap <expr> <silent> <C-d> <SID>select_current_word()
 function! s:select_current_word()
@@ -308,7 +302,6 @@ endfunc
 let g:NERDCustomDelimiters = { 'typescript': { 'left': '/** ', 'right': ' */' } }
 
 " /nerdcommenter
-
 
 " user overloads
 if filereadable(expand("~/.nvimrc"))
