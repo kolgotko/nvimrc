@@ -26,7 +26,6 @@ set smarttab
 set expandtab
 set smartindent
 set mouse=a
-set spelllang=en_us,ru_ru
 set signcolumn=yes
 set lazyredraw
 set smartcase
@@ -35,6 +34,7 @@ set undofile
 set inccommand=nosplit
 set pumblend=15
 hi PmenuSel blend=0
+autocmd FocusGained * checktime
 
 command! Vimrc :vs $MYVIMRC
 command! ReVimrc :so $MYVIMRC
@@ -49,9 +49,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-fugitive'
 Plug 'ervandew/supertab'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'matze/vim-move'
@@ -71,16 +68,26 @@ Plug 'mhinz/vim-signify'
 Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
 Plug 'joshdick/onedark.vim'
-Plug 'dracula/vim', {'as': 'dracula'}
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'Shougo/denite.nvim'
 Plug 'tpope/vim-repeat'
-Plug 'heavenshell/vim-jsdoc'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'RRethy/vim-illuminate'
 Plug 'wellle/targets.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'kaicataldo/material.vim'
+Plug 'mhinz/vim-startify'
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+
+Plug 'kevinhwang91/rnvimr'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
+Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
+Plug 'Xuyuanp/scrollbar.nvim'
+Plug 'skywind3000/asynctasks.vim'
+Plug 'skywind3000/asyncrun.vim'
 
 call plug#end()
 
@@ -129,23 +136,18 @@ let g:lightline = {
 
 " /lightline
 
-" nerdtree
+" Startify
 
-let NERDTreeWinSize = 45
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+let g:startify_session_autoload = 1
+let g:startify_session_persistence = 1
 
-" /nerdtree
+autocmd VimEnter *
+    \   if !argc()
+    \ |   Startify
+    \ |   wincmd w
+    \ | endif
 
-" nerdtree-tabs
-
-let g:nerdtree_tabs_open_on_console_startup = 1
-let g:nerdtree_tabs_open_on_gui_startup = 1
-let g:nerdtree_tabs_focus_on_files = 1
-" let g:nerdtree_tabs_autofind  = 1
-
-" /nerdtree-tabs
+" /Startify
 
 " nerdtree-git-plugin
 
@@ -174,7 +176,6 @@ let g:move_key_modifier = 'C'
 
 au BufReadPost *.tpl set ft=html
 au BufReadPost *.tpl set syntax=html
-au BufEnter *.* setlocal spell
 
 " /settings for tpl files
 
@@ -204,15 +205,6 @@ let g:gen_tags#gtags_auto_gen = 0
 
 " /gen_tags
 
-" /php-doc-modded
-
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i 
-nnoremap <C-P> :call PhpDocSingle()<CR> 
-vnoremap <C-P> :call PhpDocRange()<CR> 
-
-" /php-doc-modded
-
-
 " vim-test
 
 nmap <silent> <leader>t :TestNearest<CR>
@@ -241,7 +233,7 @@ let g:signify_sign_change            = '┃'
 
 " emmet
 let g:user_emmet_install_global = 0
-autocmd FileType html,tpl,css,scss,vue EmmetInstall
+autocmd FileType html,tpl,css,scss,vue,ts,js EmmetInstall
 " /emmet
 
 " personal mappings
@@ -250,42 +242,31 @@ autocmd FileType html,tpl,css,scss,vue EmmetInstall
 map <C-Up> :tabm -1<CR>
 map <C-Down> :tabm +1<CR>
 
-nmap <silent> <leader>fg :NERDTreeTabsFind<CR>:wincmd p<CR>
-nmap <silent> <leader>jd :JsDoc<CR>
-nmap <silent> <leader>re :%bd!<CR>:NERDTree<CR>
+nmap <silent> <leader>re :%bd!<CR>:Startify<CR>
 nmap <silent> <leader>nh :noh<CR>
 vnoremap // y/<C-R>"<CR>
 
 inoremap <silent><expr> <c-space> coc#refresh()
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+nmap <silent> <leader>gt <Plug>(coc-terminal-toggle)
 nmap <silent> <leader>gd <Plug>(coc-definition)
 nmap <silent> <leader>gy <Plug>(coc-type-definition)
 nmap <silent> <leader>gi <Plug>(coc-implementation)
 nmap <silent> <leader>gr <Plug>(coc-references)
 
+nmap <leader>gn <Plug>(coc-diagnostic-next)
 nmap <leader>ac <Plug>(coc-codeaction)
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>rf <Plug>(coc-refactor)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
 
-nmap ge :NERDTreeTabsToggle<CR>
-
 " /personal mappings
-
-" illuminate
-
-let g:Illuminate_ftblacklist = ['nerdtree']
-
-" /illuminate
 
 " coc
 
-" au BufRead * CocCommand explorer
-" au TabClosed * CocCommand explorer
 nmap <silent> <C-c> <Plug>(coc-cursors-position)
-nmap <leader>gn <Plug>(coc-diagnostic-next)
 
 nmap <expr> <silent> <C-d> <SID>select_current_word()
 function! s:select_current_word()
@@ -302,6 +283,80 @@ endfunc
 let g:NERDCustomDelimiters = { 'typescript': { 'left': '/** ', 'right': ' */' } }
 
 " /nerdcommenter
+
+" easymotion
+
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" /easymotion
+
+" ranger
+
+let g:rnvimr_enable_picker = 1
+let g:rnvimr_draw_border = 0
+let g:rnvimr_enable_bw = 1
+let g:rnvimr_ranger_cmd = 'ranger --cmd="set column_ratios 1,1"'
+            " \ --cmd="set draw_borders both"'
+
+" highlight link RnvimrNormal CursorLine
+
+nnoremap <silent> <M-o> :RnvimrToggle<CR>
+tnoremap <silent> <M-o> <C-\><C-n>:RnvimrToggle<CR>
+
+
+" fzf
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
+" scrollbar
+
+augroup ScrollbarInit
+  autocmd!
+  autocmd CursorMoved,VimResized,QuitPre * silent! lua require('scrollbar').show()
+  autocmd WinEnter,FocusGained           * silent! lua require('scrollbar').show()
+  autocmd WinLeave,FocusLost,QuitPre             * silent! lua require('scrollbar').clear()
+augroup end
+
+let g:scrollbar_shape = {
+    \ 'head': '┃',
+    \ 'body': '┃',
+    \ 'tail': '┃',
+    \ }
+
+let g:scrollbar_highlight = {
+    \ 'head': 'Folded',
+    \ 'body': 'Folded',
+    \ 'tail': 'Folded',
+    \ }
+
+let g:scrollbar_excluded_filetypes = ['startify']
+
+function! NgModuleCreate()
+    let savedPwd = getcwd()
+    call inputsave()
+    let name = input('module name: ')
+    call inputrestore()
+
+    execute 'lcd %:p:h'
+    execute '!ng generate module ' . name
+    execute 'cd ' . savedPwd
+endfunction
+
+function! NgComponentCreate()
+    let savedPwd = getcwd()
+    call inputsave()
+    let name = input('component name: ')
+    call inputrestore()
+
+    execute 'lcd %:p:h'
+    execute '!ng generate component ' . name
+    execute 'cd ' . savedPwd
+endfunction
+
+let g:asyncrun_open = 6
+
+" minimap
+" let g:minimap_auto_start = 1
 
 " user overloads
 if filereadable(expand("~/.nvimrc"))
