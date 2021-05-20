@@ -62,8 +62,6 @@ Plug 'eugen0329/vim-esearch'
 Plug 'easymotion/vim-easymotion'
 Plug 'gregsexton/matchtag'
 Plug 'dyng/ctrlsf.vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'mhinz/vim-signify'
 Plug 'Yggdroot/indentLine'
 Plug 'godlygeek/tabular'
@@ -88,6 +86,7 @@ Plug 'wfxr/minimap.vim', {'do': ':!cargo install --locked code-minimap'}
 Plug 'Xuyuanp/scrollbar.nvim'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'psliwka/vim-smoothie'
 
 call plug#end()
 
@@ -178,14 +177,6 @@ au BufReadPost *.tpl set ft=html
 au BufReadPost *.tpl set syntax=html
 
 " /settings for tpl files
-
-" ultisnips
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" /ultisnips
 
 " indentLine
 
@@ -289,6 +280,9 @@ let g:NERDCustomDelimiters = { 'typescript': { 'left': '/** ', 'right': ' */' } 
 map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
 
+autocmd User EasyMotionPromptBegin silent! CocDisable
+autocmd User EasyMotionPromptEnd   silent! CocEnable
+
 " /easymotion
 
 " ranger
@@ -310,26 +304,26 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 " scrollbar
 
-augroup ScrollbarInit
-  autocmd!
-  autocmd CursorMoved,VimResized,QuitPre * silent! lua require('scrollbar').show()
-  autocmd WinEnter,FocusGained           * silent! lua require('scrollbar').show()
-  autocmd WinLeave,FocusLost,QuitPre             * silent! lua require('scrollbar').clear()
-augroup end
+" augroup ScrollbarInit
+"   autocmd!
+"   autocmd CursorMoved,VimResized,QuitPre * silent! lua require('scrollbar').show()
+"   autocmd WinEnter,FocusGained           * silent! lua require('scrollbar').show()
+"   autocmd WinLeave,FocusLost,VimResized,QuitPre             * silent! lua require('scrollbar').clear()
+" augroup end
 
-let g:scrollbar_shape = {
-    \ 'head': '┃',
-    \ 'body': '┃',
-    \ 'tail': '┃',
-    \ }
+" let g:scrollbar_shape = {
+"     \ 'head': '┃',
+"     \ 'body': '┃',
+"     \ 'tail': '┃',
+"     \ }
 
-let g:scrollbar_highlight = {
-    \ 'head': 'Folded',
-    \ 'body': 'Folded',
-    \ 'tail': 'Folded',
-    \ }
+" let g:scrollbar_highlight = {
+"     \ 'head': 'Folded',
+"     \ 'body': 'Folded',
+"     \ 'tail': 'Folded',
+"     \ }
 
-let g:scrollbar_excluded_filetypes = ['startify']
+" let g:scrollbar_excluded_filetypes = ['startify']
 
 function! NgModuleCreate()
     let savedPwd = getcwd()
