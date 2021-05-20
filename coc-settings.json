@@ -1,10 +1,18 @@
 {
+    "coc.preferences.timeout": 9000,
     "coc.preferences.jumpCommand": "split",
-    "coc.preferences.extensionUpdateCheck": "daily",
+    "coc.preferences.extensionUpdateCheck": "never",
     "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+
+    "eslint.quiet": true,
+    "eslint.run": "onSave",
 
     "translator.toLang": "ru",
     "translator.engines": ["google"],
+
+    "cSpellExt.enableDictionaries": ["russian"],
+    "cSpell.language": "en,ru",
+    "cSpell.enabled": false,
 
     "explorer.width": 30,
     "explorer.icon.enableNerdfont": true,
@@ -12,5 +20,37 @@
     "explorer.keyMappings": {
         "<cr>": ["expandable?", "expand", "open"],
         "v": "open:vsplit"
-    }
+    },
+    "cSpell.userWords": [
+      "Colorin",
+      "Datepicker",
+      "Devtools",
+      "Upsert",
+      "Webassembly",
+      "antd",
+      "bindgen",
+      "checkmark",
+      "consts",
+      "daterange",
+      "hbpro",
+      "iclicks",
+      "ngneat",
+      "rackrate",
+      "rackrates",
+      "rangepicker",
+      "transloco",
+      "wasm",
+      "Айтем",
+      "Мапим",
+      "Предпросмотр",
+      "Промерочные",
+      "айтема",
+      "инпутах",
+      "контрол",
+      "контролы",
+      "оффера",
+      "офферов",
+      "подгрузки",
+      "роутера"
+    ]
 }
