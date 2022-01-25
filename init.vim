@@ -54,8 +54,6 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'matze/vim-move'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-Plug 'wting/rust.vim'
-Plug 'rust-lang/rust.vim'
 Plug 'equalsraf/neovim-gui-shim'
 Plug 'sheerun/vim-polyglot'
 Plug 'eugen0329/vim-esearch'
@@ -74,7 +72,7 @@ Plug 'RRethy/vim-illuminate'
 Plug 'wellle/targets.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'kaicataldo/material.vim'
+" Plug 'kaicataldo/material.vim'
 Plug 'mhinz/vim-startify'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 
@@ -87,6 +85,10 @@ Plug 'Xuyuanp/scrollbar.nvim'
 Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 Plug 'psliwka/vim-smoothie'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'sainnhe/edge'
+Plug 'kyazdani42/nvim-web-devicons'
 
 call plug#end()
 
@@ -103,9 +105,17 @@ let g:onedark_terminal_italics=1
 let g:material_theme_style = 'palenight'
 let g:material_terminal_italics = 1
 
+let g:edge_style = 'aura'
+let g:edge_enable_italic = 1
+let g:edge_disable_italic_comment = 1
+
+" colorscheme challenger_deep
 colorscheme onedark
 " colorscheme material
 " colorscheme dracula
+" colorscheme edge
+
+" material
 
 " airline
 
@@ -298,6 +308,15 @@ let g:rnvimr_ranger_cmd = 'ranger --cmd="set column_ratios 1,1"'
 nnoremap <silent> <M-o> :RnvimrToggle<CR>
 tnoremap <silent> <M-o> <C-\><C-n>:RnvimrToggle<CR>
 
+" Map Rnvimr action
+let g:rnvimr_action = {
+            \ '<C-t>': 'NvimEdit tabedit',
+            \ '<C-x>': 'NvimEdit split',
+            \ '<C-v>': 'NvimEdit vsplit',
+            \ 'gw': 'JumpNvimCwd',
+            \ 'yw': 'EmitRangerCwd'
+            \ }
+
 
 " fzf
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
@@ -353,8 +372,13 @@ let g:asyncrun_open = 6
 " let g:minimap_auto_start = 1
 
 " user overloads
-if filereadable(expand("~/.nvimrc"))
 
-    source ~/.nvimrc
-
-endif
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  -- highlight = { enable = true },
+  incremental_selection = { enable = true },
+  textobjects = { enable = true },
+  -- indent = { enable = true },
+}
+EOF
