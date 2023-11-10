@@ -1,3 +1,5 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 vim.opt.syntax = 'ON'
 vim.opt.termguicolors = true
 vim.opt.keymap = 'russian-jcukenwin'
@@ -20,15 +22,20 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.opt.undofile = true
 vim.opt.pumblend = 15
+vim.opt.laststatus = 3
+-- vim.opt.spell = true
+vim.opt.spelllang = {'en_us', 'ru_ru'}
+vim.opt.spelloptions = {'camel'}
 
--- vim.opt.listchars:append("space:⋅")
 vim.opt.listchars:append("eol:¬")
 vim.opt.listchars:append("tab:▸ ")
 vim.opt.listchars:append("trail:·")
--- vim.opt.listchars:append("lead:·")
 
--- vim.o.fillchars = 'vert: '
 vim.opt.list = true
+
+vim.diagnostic.config({
+    virtual_text = false,
+})
 
 vim.cmd([[
     nmap <silent> <leader>nh :noh<CR>
@@ -38,7 +45,6 @@ function _G.dump(...)
     local objects = vim.tbl_map(vim.inspect, {...})
     print(unpack(objects))
 end
-
 
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }

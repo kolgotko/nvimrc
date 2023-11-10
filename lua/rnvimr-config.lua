@@ -6,6 +6,6 @@ vim.cmd([[
     let g:rnvimr_enable_picker = 1
     let g:rnvimr_draw_border = 1
     let g:rnvimr_enable_bw = 1
-    let g:rnvimr_ranger_cmd = 'ranger --cmd="set column_ratios 1,1"'
+    let g:rnvimr_ranger_cmd = ['ranger', '--cmd=set column_ratios 1,1']
     let g:rnvimr_edit_cmd = 'drop'
 ]])

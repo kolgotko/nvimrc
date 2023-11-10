@@ -1,7 +1,21 @@
-vim.o.completeopt = 'menu,menuone,noselect'
-
 -- Setup nvim-cmp.
 local cmp = require'cmp'
+
+function select_next_item(fallback)
+    if cmp.visible() then
+        cmp.select_next_item()
+    else 
+        fallback()
+    end
+end
+
+function select_prev_item(fallback)
+    if cmp.visible() then
+        cmp.select_prev_item()
+    else 
+        fallback()
+    end
+end
 
 cmp.setup({
     snippet = {
@@ -14,17 +28,15 @@ cmp.setup({
         end,
     },
     mapping = {
-        ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-        ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
-        ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-        ['<C-e>'] = cmp.mapping({
-            i = cmp.mapping.abort(),
-            c = cmp.mapping.close(),
-        }),
-        -- Accept currently selected item. If none selected, `select` first item.
-        -- Set `select` to `false` to only confirm explicitly selected items.
-        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        -- ['<Tab>'] = select_next_item,
+        ['<Down>'] = select_next_item,
+        ['<Up>'] = select_prev_item,
+        ['<S-Tab>'] = select_prev_item,
+        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
@@ -39,3 +51,21 @@ cmp.setup({
             -- { name = 'rg' },
         }),
 })
+
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
+})
+
+
+-- TODO: uncomment after resolve https://github.com/hrsh7th/nvim-cmp/issues/1441
+-- cmp.setup.cmdline(':', {
+--     mapping = cmp.mapping.preset.cmdline(),
+--     sources = cmp.config.sources({
+--         { name = 'path' }
+--     }, {
+--             { name = 'cmdline' }
+--         })
+-- })
