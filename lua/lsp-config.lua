@@ -8,7 +8,7 @@ local lspconfig = require("lspconfig")
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
-        -- vim.lsp.inlay_hint(ev.buf, true)
+        vim.lsp.inlay_hint.enable(ev.buf, true)
 
         -- Enable completion triggered by <c-x><c-o>
         -- vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'

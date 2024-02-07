@@ -53,5 +53,11 @@ local opts = { noremap = true, silent = true }
 map('n', '<A-,>', ':bprevious<CR>', opts)
 map('n', '<A-.>', ':bnext<CR>', opts)
 
+map('n', '<C-,>', 'tabm -1<CR>', opts)
+map('n', '<C-.>', 'tabm +1<CR>', opts)
+map('n', '<^-,>', 'tabm -1<CR>', opts)
+map('n', '<^-.>', 'tabm +1<CR>', opts)
 map('n', '<C-Up>', 'tabm -1<CR>', opts)
 map('n', '<C-Down>', 'tabm +1<CR>', opts)
+map('n', '<A-Left>', 'tabm -1<CR>', opts)
+map('n', '<A-Right>', 'tabm +1<CR>', opts)
